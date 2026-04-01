@@ -14,7 +14,8 @@
 export const EMAILJS_CONFIG = {
   PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "Isy0RUOjRl68OwQVx", // Fallback for development
   SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_cjqvgyo", // Fallback for development
-  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_xy5rulp", // Fallback for development
+  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_xy5rulp", // Contact form template
+  REGISTRATION_TEMPLATE_ID: import.meta.env.VITE_EMAILJS_REGISTRATION_TEMPLATE_ID || "template_ptgo7m5", // Event registration template
 };
 
 // reCAPTCHA has been removed from the form

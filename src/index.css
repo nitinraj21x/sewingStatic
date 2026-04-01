@@ -5401,3 +5401,54 @@ textarea.form-input {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+/* Logo Glow Dot Animation */
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.logo-glow-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  width: 10%;
+  height: 10%;
+  background-color: #ffd700;
+  border-radius: 50%;
+  animation: logoGlow 6s ease-in-out infinite;
+  z-index: -10;
+}
+
+@keyframes logoGlow {
+  0% {
+    opacity: 0.9;
+    box-shadow: 0 0 3px #ffd700,
+                0 0 6px #ffd700,
+                0 0 9px #ffd700,
+                0 0 12px #ffb347;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 6px #ffd700,
+                0 0 12px #ffd700,
+                0 0 18px #ffd700,
+                0 0 24px #ffb347,
+                0 0 30px #ff8c00;
+    transform: translate(300%, -350%);
+  }
+  100% {
+    opacity: 0.9;
+    box-shadow: 0 0 3px #ffd700,
+                0 0 6px #ffd700,
+                0 0 9px #ffd700,
+                0 0 12px #ffb347;
+  }
+}
+
+/* Ensure logo container has proper positioning */
+.logo-main {
+  position: relative;
+  z-index: 1;
+}

@@ -59,6 +59,7 @@ const Navigation = React.memo(() => {
               alt="Sewing Circle Logo" 
               className="logo-main"
             />
+            <div className="logo-glow-dot"></div>
           </div>
           <span className="light-text">CIRCLE</span>
         </div>

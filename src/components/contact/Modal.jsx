@@ -9,6 +9,7 @@ const Modal = React.memo(({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     contribution: ''
   });
   const [errors, setErrors] = useState({});
@@ -24,6 +25,13 @@ const Modal = React.memo(({ isOpen, onClose }) => {
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) return 'Please enter a valid email address';
+    return '';
+  };
+
+  const validatePhone = (phone) => {
+    if (!phone) return '';
+    const phoneRegex = /^[\+]?[1-9][\d\s\-\(\)]{7,14}$/;
+    if (!phoneRegex.test(phone.replace(/\s/g, ''))) return 'Please enter a valid phone number';
     return '';
   };
 
@@ -44,9 +52,11 @@ const Modal = React.memo(({ isOpen, onClose }) => {
     const newErrors = {};
     const nameError = validateName(formData.name);
     const emailError = validateEmail(formData.email);
+    const phoneError = validatePhone(formData.phone);
     
     if (nameError) newErrors.name = nameError;
     if (emailError) newErrors.email = emailError;
+    if (phoneError) newErrors.phone = phoneError;
     if (!formData.contribution) newErrors.contribution = 'Please select a contribution type';
     
     if (Object.keys(newErrors).length > 0) {
@@ -67,12 +77,14 @@ const Modal = React.memo(({ isOpen, onClose }) => {
         to_name: "Sewing Circle Team",
         from_name: formData.name,
         from_email: formData.email,
+        phone: formData.phone || 'Not provided',
         to_email: "ash.tvm@gmail.com",
         contribution_type: formData.contribution,
         message: `New member application for The Sewing Circle:
 
 Name: ${formData.name}
 Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
 Contribution Type: ${formData.contribution}
 
 Please follow up with this new member.`
@@ -109,7 +121,7 @@ Please follow up with this new member.`
         type: 'success',
         message: "Thank you for joining! We'll be in touch soon."
       });
-      setFormData({ name: '', email: '', contribution: '' });
+      setFormData({ name: '', email: '', phone: '', contribution: '' });
       
       // Auto close notification and modal after 3 seconds
       setTimeout(() => {
@@ -221,6 +233,19 @@ Please follow up with this new member.`
               required 
             />
             {errors.email && <p className="form-error">{errors.email}</p>}
+          </div>
+          
+          <div className="form-group">
+            <label className="form-label">Phone Number (Optional)</label>
+            <input 
+              type="tel" 
+              name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
+              className={`form-input ${errors.phone ? 'error' : ''}`}
+              placeholder="+1 (555) 123-4567" 
+            />
+            {errors.phone && <p className="form-error">{errors.phone}</p>}
           </div>
           
           <div className="form-group">

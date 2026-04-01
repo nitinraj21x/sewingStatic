@@ -92,7 +92,7 @@ Please confirm their registration and send event details.`
       // Send email using EmailJS
       const result = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
+        EMAILJS_CONFIG.REGISTRATION_TEMPLATE_ID,
         templateParams
       );
       
@@ -106,7 +106,7 @@ Please confirm their registration and send event details.`
       
       const result2 = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
+        EMAILJS_CONFIG.REGISTRATION_TEMPLATE_ID,
         templateParams2
       );
       
