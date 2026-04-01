@@ -55,7 +55,7 @@ const Navigation = React.memo(() => {
           SEWING
           <div className="logo-container">
             <img 
-              src="/src/image/logo/LogoSWTransparent.png" 
+              src="/src/image/logo/logoSWTransparent.png" 
               alt="Sewing Circle Logo" 
               className="logo-main"
             />
