@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
+import logoSW from '../../image/logo/logoSWTransparent.png';
 
 /**
  * Navigation Component
@@ -55,7 +56,7 @@ const Navigation = React.memo(() => {
           SEWING
           <div className="logo-container">
             <img 
-              src="/src/image/logo/logoSWTransparent.png" 
+              src={logoSW}
               alt="Sewing Circle Logo" 
               className="logo-main"
             />
