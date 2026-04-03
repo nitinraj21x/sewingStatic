@@ -3121,11 +3121,11 @@ body {
 
 /* Width utilities */
 .w-96 {
-  width: 24rem;
+  width: clamp(18rem, 30vw, 24rem);
 }
 
 .h-96 {
-  height: 24rem;
+  height: clamp(18rem, 30vw, 24rem);
 }
 
 /* Color utilities with opacity */
@@ -4918,23 +4918,17 @@ textarea.form-input {
 }
 /* Hero Component Additional Styles */
 .hero-subtitle {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1.25rem);
   color: var(--color-slate-300);
-  margin-bottom: 2.5rem;
-  max-width: 42rem;
+  margin-bottom: clamp(1.5rem, 3vh, 3rem);
+  max-width: 70%;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.2;
 }
 
-@media (min-width: 768px) {
-  .hero-subtitle {
-    font-size: 1.25rem;
-  }
-}
-
 .hero-cta-primary {
-  padding: 1rem 2rem;
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1.5rem, 3vw, 2.5rem);
   background-color: var(--color-white);
   color: var(--color-slate-900);
   font-weight: bold;
@@ -5081,8 +5075,8 @@ textarea.form-input {
   position: absolute;
   top: 25%;
   left: 25%;
-  width: 24rem;
-  height: 24rem;
+  width: clamp(15rem, 40vw, 30rem);
+  height: clamp(15rem, 40vw, 30rem);
   background-color: rgba(147, 51, 234, 0.3);
   border-radius: 50%;
   filter: blur(128px);
@@ -5093,8 +5087,8 @@ textarea.form-input {
   position: absolute;
   bottom: 25%;
   right: 25%;
-  width: 24rem;
-  height: 24rem;
+  width: clamp(15rem, 40vw, 30rem);
+  height: clamp(15rem, 40vw, 30rem);
   background-color: rgba(8, 145, 178, 0.2);
   border-radius: 50%;
   filter: blur(128px);
@@ -5106,15 +5100,27 @@ textarea.form-input {
   position: relative;
   z-index: 10;
   text-align: center;
-  padding: 0 1rem;
-  max-width: 56rem;
+  padding: 0 5%;
+  max-width: 90%;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    max-width: 75%;
+  }
 }
 
 .hero-badge {
   display: inline-block;
-  padding: 0.25rem 1rem;
-  margin-bottom: 1.5rem;
+  padding: clamp(0.25rem, 0.5vw, 0.5rem) clamp(0.75rem, 2vw, 1.5rem);
+  margin-bottom: clamp(1rem, 2vh, 2rem);
   border: 1px solid rgba(6, 182, 212, 0.3);
   border-radius: 9999px;
   background-color: rgba(6, 182, 212, 0.1);
@@ -5123,35 +5129,23 @@ textarea.form-input {
 
 .hero-badge-text {
   color: var(--color-cyan-300);
-  font-size: 0.75rem;
+  font-size: clamp(0.625rem, 1.2vw, 0.875rem);
   font-weight: bold;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 6vw, 4.5rem);
   font-weight: 900;
   color: var(--color-white);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 2vh, 2rem);
   line-height: 1.25;
   letter-spacing: -0.025em;
 }
 
-@media (min-width: 768px) {
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  .hero-subtitle{
-    font-size: 1.1rem;
-  }
-  .hero-badge{
-  }
-}
-
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 4rem;
     line-height: 1;
   }
 }
@@ -5167,7 +5161,7 @@ textarea.form-input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 @media (min-width: 640px) {
@@ -5177,7 +5171,7 @@ textarea.form-input {
 }
 
 .hero-cta-secondary {
-  padding: 1rem 2rem;
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1.5rem, 3vw, 2.5rem);
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--color-white);
@@ -5197,7 +5191,7 @@ textarea.form-input {
 
 .hero-scroll-indicator {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: clamp(1.5rem, 4vh, 3rem);
   left: 50%;
   transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.5);
