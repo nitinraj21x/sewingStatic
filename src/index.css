@@ -420,6 +420,163 @@ body {
   text-decoration: none;
 }
 
+/* =============================================
+   LANDSCAPE PHONE RESPONSIVENESS
+   Targets phones in landscape (short viewport)
+   ============================================= */
+@media (max-height: 500px) and (orientation: landscape) {
+  .navigation.transparent,
+  .navigation.scrolled {
+    padding: 0.35rem 0;
+  }
+
+  .logo-main {
+    height: 1.75rem;
+  }
+
+  .navigation-brand {
+    font-size: clamp(0.875rem, 2.5vw, 1.1rem);
+    gap: 0.4rem;
+  }
+
+  .mobile-menu.open {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .mobile-menu-content {
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mobile-menu-link {
+    font-size: 0.8rem;
+    padding: 0.25rem 0;
+  }
+
+  /* Sections: reduce min-height so content isn't cut off */
+  .hero-section,
+  .about-section,
+  .objectives-section,
+  .vision-section,
+  .future-section,
+  .section {
+    min-height: unset;
+    padding: 3rem 0 2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .section-subtitle {
+    font-size: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .section-header {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* =============================================
+   LOGO CLICK ANIMATION
+   ============================================= */
+
+/* --- Nav logo: exit up / return down --- */
+@keyframes logo-exit-up {
+  from { transform: translateY(0);     opacity: 1; }
+  to   { transform: translateY(-200%); opacity: 0; }
+}
+@keyframes logo-return-down {
+  from { transform: translateY(-200%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+.logo-nav--hidden {
+  animation: logo-exit-up 0.5s ease-in forwards;
+}
+.logo-nav--visible {
+  animation: logo-return-down 0.5s ease-out forwards;
+}
+/* Prevent the return animation from firing on first render */
+.logo-nav:not(.logo-nav--hidden):not(.logo-nav--visible) {
+  animation: none;
+}
+
+/* --- Site blur overlay --- */
+.logo-anim-blur {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  transition: backdrop-filter 0.3s ease, background 0.3s ease;
+}
+.logo-anim-blur--active {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: all;
+  cursor: pointer;
+}
+
+/* --- Enlarged logo overlay --- */
+@keyframes logo-roll-in {
+  0%   { transform: translate(-110%, -50%) rotate(-360deg); opacity: 0; }
+  100% { transform: translate(-50%,  -50%) rotate(0deg);    opacity: 1; }
+}
+@keyframes logo-roll-out {
+  0%   { transform: translate(-50%,  -50%) rotate(0deg);    opacity: 1; }
+  100% { transform: translate(-110%, -50%) rotate(-360deg); opacity: 0; }
+}
+
+.logo-anim-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  transform: translate(-110%, -50%);
+  pointer-events: none;
+  visibility: hidden;
+}
+.logo-anim-overlay--in {
+  visibility: visible;
+  pointer-events: all;
+  cursor: pointer;
+  animation: logo-roll-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.logo-anim-overlay--visible {
+  visibility: visible;
+  pointer-events: all;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+.logo-anim-overlay--out {
+  visibility: visible;
+  pointer-events: all;
+  cursor: pointer;
+  animation: logo-roll-out 0.5s ease-in forwards;
+}
+.logo-anim-overlay--hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.logo-anim-overlay-img {
+  /* Responsive but never exceeds natural image size */
+  width: clamp(120px, 35vmin, 300px);
+  height: auto;
+  max-width: 300px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 32px rgba(6, 182, 212, 0.7))
+          drop-shadow(0 0 64px rgba(168, 85, 247, 0.4));
+  display: block;
+}
+
 /* Section Styles */
 .section {
   min-height: 100vh;
