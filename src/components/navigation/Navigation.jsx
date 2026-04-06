@@ -42,7 +42,7 @@ function runSequence(steps) {
   return () => ids.forEach(clearTimeout);
 }
 
-const Navigation = React.memo(() => {
+const Navigation = React.memo(({ loadingDone = false }) => {
   const [isScrolled, setIsScrolled]         = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -50,6 +50,9 @@ const Navigation = React.memo(() => {
   const [logoHidden,  setLogoHidden]  = useState(false); // nav logo gone upward
   const [siteBlurred, setSiteBlurred] = useState(false);
   const [overlayPhase, setOverlayPhase] = useState('hidden'); // 'hidden' | 'in' | 'visible' | 'out'
+
+  // Intro animation: logo starts offscreen, drops in after loading done + 0.3s delay
+  const [introPhase, setIntroPhase] = useState('offscreen'); // 'offscreen' | 'drop'
 
   const cancelRef = useRef(null);
   const animatingRef = useRef(false);
@@ -70,6 +73,13 @@ const Navigation = React.memo(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Trigger logo drop-in 0.3s after loading page completes
+  useEffect(() => {
+    if (!loadingDone) return;
+    const t = setTimeout(() => setIntroPhase('drop'), 300);
+    return () => clearTimeout(t);
+  }, [loadingDone]);
 
   const toggleMobileMenu = useCallback(() => setIsMobileMenuOpen(p => !p), []);
   const closeMobileMenu  = useCallback(() => setIsMobileMenuOpen(false), []);
@@ -134,11 +144,13 @@ const Navigation = React.memo(() => {
           >
             SEWING
             <div className="logo-container">
-              <img
-                src={logoSW}
-                alt="Sewing Circle Logo"
-                className={`logo-main logo-nav${logoHidden ? ' logo-nav--hidden' : ' logo-nav--visible'}`}
-              />
+              <div className={`logo-intro-wrap logo-intro-wrap--${introPhase}`}>
+                <img
+                  src={logoSW}
+                  alt="Sewing Circle Logo"
+                  className={`logo-main logo-nav${logoHidden ? ' logo-nav--hidden' : ' logo-nav--visible'}`}
+                />
+              </div>
               <div className="logo-glow-dot"></div>
             </div>
             <span className="light-text">CIRCLE</span>

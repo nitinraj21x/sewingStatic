@@ -22,11 +22,6 @@ const Hero = React.memo(() => {
       <div className="hero-orb-2"></div>
 
       <div className="hero-content">
-        <Reveal>
-          <div className="hero-badge">
-            <span className="hero-badge-text">The Future of Connection</span>
-          </div>
-        </Reveal>
         
         <Reveal delay={200}>
           <h1 className="hero-title">

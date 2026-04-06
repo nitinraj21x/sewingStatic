@@ -29,11 +29,11 @@ const EventsSection = React.memo(() => {
   const upcomingEvents = [
     {
       id: 'upcoming-1',
-      name: "☕ Sewing Circle Coffee Meetup – Bringing Dallas IT Professionals Together ",
+      name: "☕ Sewing Circle Coffee Meetup – Bringing IT Professionals Together ",
       date: "April 25",
       time: "4 pm",
       venue: "https://share.google/ZeydqxaTM6jRCXA0f",
-      description: "We’re excited to host our next Sewing Circle Coffee Meetup on April 25th in Frisco, TX.\n\nSewing Circle is a growing community of IT professionals in the Dallas area, built on the idea of coming together to support one another—through knowledge sharing, meaningful conversations, and genuine connections. \n\nThis meetup is an opportunity to:\n*Learn from each other’s experiences\n* Build a strong, supportive network\n* Open doors for others in the IT community \n* Enjoy an evening of authentic conversations "
+      description: "We’re excited to host our next Sewing Circle Coffee Meetup on April 25th in Frisco, TX.\n\nSewing Circle is a growing community of IT professionals built on the idea of coming together to support one another—through knowledge sharing, meaningful conversations, and genuine connections. \n\nThis meetup is an opportunity to:\n*Learn from each other’s experiences\n* Build a strong, supportive network\n* Open doors for others in the IT community \n* Enjoy an evening of authentic conversations "
     }
   ];
 
@@ -45,7 +45,7 @@ const EventsSection = React.memo(() => {
       theme: "Nine minds, one table, and AI",
       teaser: "Nine minds, one table, and a deep dive into how AI is reshaping everything from code to careers.",
       fullDescription: "Kicked Off 2026 with Insightful Conversations !!!\n\nWe had an intimate group of nine professionals from across the IT ecosystem — hands-on data engineers, a technical project manager, an engineering manager overseeing cybersecurity programs, IoT specialists, and seasoned recruitment experts. The diversity in expertise made the discussion incredibly rich.\n\nWhat began with introductions quickly evolved into a deep dive into how organizations are navigating the AI wave.\n\nWe explored:\n	•	How companies are adapting to AI across the lifecycle — from sales to delivery\n•	The way AI tools are documenting client meetings and generating insights\n•	How AI agents are assisting developers in day-to-day coding and driving cost efficiencies\n•	Healthy debates on whether human-led coding will always remain essential\n•	Reflections on how programming languages have evolved over time — from assembly to modern Java ecosystems\n•	The pace of AI adoption across industries, particularly in financial institutions balancing innovation with security controls\n•	How recruiting is being reshaped by AI — from candidate screening to ensuring authenticity in a competitive job market\n•	Insights from AI summits currently taking place in India\n\nThere were also honest conversations about the current job market and how both companies and candidates are adapting to a rapidly shifting landscape. ",
-      location: "Hold My Chai Cafe, Frisco",
+      location: "Haraz Coffee House, Frisco",
       duration: "2 hours",
       participants: 9,
       facilitator: "Asha",

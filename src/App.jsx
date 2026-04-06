@@ -1,4 +1,5 @@
 import React, { useState, Suspense } from 'react';
+import LoadingPage from './components/loading/LoadingPage';
 
 // Component imports - lazy loaded for code splitting
 const Navigation = React.lazy(() => import('./components/navigation/Navigation'));
@@ -26,6 +27,9 @@ import { ErrorBoundary, LoadingSpinner } from './components/shared';
  * Manages global state and renders all major sections organized by website sections.
  */
 const App = () => {
+  // Loading page state
+  const [isLoading, setIsLoading] = useState(true);
+
   // State management for modal and events
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
@@ -40,10 +44,11 @@ const App = () => {
 
   return (
     <ErrorBoundary>
+      {isLoading && <LoadingPage onComplete={() => setIsLoading(false)} />}
       <div className="app-container">
         {/* Fixed Navigation Bar */}
         <Suspense fallback={<LoadingSpinner size="small" textKey="loading.navigation" />}>
-          <Navigation />
+          <Navigation loadingDone={!isLoading} />
         </Suspense>
 
         {/* Main Content Sections */}
