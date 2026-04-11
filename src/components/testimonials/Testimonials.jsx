@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import Reveal from '../shared/Reveal';
+
+const getItemsPerSlide = () => {
+  if (window.innerWidth <= 768) return 1;
+  if (window.innerWidth <= 1024) return 2;
+  return 3;
+};
 
 const Testimonials = React.memo(() => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [slideDirection, setSlideDirection] = useState('next');
+  const [itemsPerSlide, setItemsPerSlide] = useState(getItemsPerSlide);
 
   const testimonials = [
     {
@@ -64,8 +71,24 @@ const Testimonials = React.memo(() => {
     }
   ];
 
-  const testimonialsPerSlide = 3;
+  const testimonialsPerSlide = itemsPerSlide;
   const totalSlides = Math.ceil(testimonials.length / testimonialsPerSlide);
+
+  // Update items per slide on resize
+  useEffect(() => {
+    const handleResize = () => {
+      const next = getItemsPerSlide();
+      setItemsPerSlide(prev => {
+        if (prev !== next) {
+          setCurrentSlide(0);
+          return next;
+        }
+        return prev;
+      });
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Auto-advance slides every 8 seconds
   useEffect(() => {
@@ -132,9 +155,9 @@ const Testimonials = React.memo(() => {
       <div className="testimonials-slider">
         <Reveal>
           <div className="testimonials-wrapper">
-            {/* Navigation Buttons */}
+            {/* Desktop/Tablet prev button */}
             <button 
-              className="testimonial-nav testimonial-nav-prev"
+              className="testimonial-nav testimonial-nav-prev testimonial-nav-desktop"
               onClick={() => handleSlideChange('prev')}
               disabled={isTransitioning}
             >
@@ -143,6 +166,15 @@ const Testimonials = React.memo(() => {
             
             {/* Testimonials Container with Fixed Height */}
             <div className="testimonials-container-fixed">
+              {/* Mobile overlay nav buttons */}
+              <button
+                className="testimonial-nav testimonial-nav-prev testimonial-nav-mobile"
+                onClick={() => handleSlideChange('prev')}
+                disabled={isTransitioning}
+              >
+                <ChevronLeft size={20} />
+              </button>
+
               <div className="testimonials-grid">
                 {getCurrentTestimonials().map((testimonial, index) => (
                   <div 
@@ -168,11 +200,19 @@ const Testimonials = React.memo(() => {
                   </div>
                 ))}
               </div>
+
+              <button
+                className="testimonial-nav testimonial-nav-next testimonial-nav-mobile"
+                onClick={() => handleSlideChange('next')}
+                disabled={isTransitioning}
+              >
+                <ChevronRight size={20} />
+              </button>
             </div>
             
-            {/* Navigation Buttons */}
+            {/* Desktop/Tablet next button */}
             <button 
-              className="testimonial-nav testimonial-nav-next"
+              className="testimonial-nav testimonial-nav-next testimonial-nav-desktop"
               onClick={() => handleSlideChange('next')}
               disabled={isTransitioning}
             >

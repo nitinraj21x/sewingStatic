@@ -32,7 +32,7 @@ const VisionSection = React.memo(() => {
         <Reveal delay={200}>
           <div className="vision-stats">
             <div>
-              <div className="vision-stat-number">200+</div>
+              <div className="vision-stat-number">250+</div>
               <div className="vision-stat-label">Community Members</div>
             </div>
             <div>

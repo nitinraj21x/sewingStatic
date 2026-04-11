@@ -9,10 +9,12 @@ const FutureSection = React.memo(() => {
       <div className="section-container future-inner">
         {/* Left: text content */}
         <Reveal className="future-text-col">
-          <p className="future-label">Our Direction</p>
-          <h3 className="future-heading">
+          <div className="section-header">
+            <h2 className="section-title">Our Direction</h2>
+          </div>
+          <p className="future-heading">
             To evolve into a collaborative platform that connects professionals, fosters knowledge sharing, and enables meaningful career growth through community-driven support.
-          </h3>
+          </p>
           <div className="future-punchline">
             <Sparkles className="future-punchline-icon" />
             <p>Transforming connections into opportunities and support into success.</p>

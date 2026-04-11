@@ -260,7 +260,7 @@ const EventsSection = React.memo(() => {
         <div className="events-subsection">
           <Reveal>
             <h3 className="events-subsection-title">Past Events</h3>
-            <p className="events-subsection-subtitle">Sewing Circle Event Gallery: 2025 Meetups</p>
+            <p className="events-subsection-subtitle">Sewing Circle Event Gallery: </p>
           </Reveal>
           
           <div className={`past-events-grid ${showAllPastEvents ? 'expanded' : 'limited'}`}>
