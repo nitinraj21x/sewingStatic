@@ -146,7 +146,7 @@ const Testimonials = React.memo(() => {
     <div className="testimonials-container">
       <div className="section-header">
         <Reveal>
-          <h3 className="testimonials-title">Community Voices</h3>
+          <h3 className="section-title">Community Voices</h3>
           <p className="testimonials-subtitle">Real experiences from our community members</p>
         </Reveal>
       </div>
