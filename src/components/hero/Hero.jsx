@@ -46,7 +46,7 @@ const Hero = React.memo(() => {
             <a href="#vision" className="hero-cta-primary">
               Discover Vision <ArrowRight size={20} className="hero-cta-icon" />
             </a>
-            <a href="#involved" className="hero-cta-secondary">
+            <a href="#contact" className="hero-cta-secondary">
               Join the Circle
             </a>
           </div>
