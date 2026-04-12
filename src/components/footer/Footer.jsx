@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 const Footer = React.memo(() => {
   return (
@@ -11,13 +11,8 @@ const Footer = React.memo(() => {
         </div>
         
         <div className="footer-social">
-          <a href="#" className="footer-social-link" aria-label="Facebook">
-            <Facebook size={20} />
-          </a>
-          <a href="#" className="footer-social-link" aria-label="Twitter">
-            <Twitter size={20} />
-          </a>
-          <a href="#" className="footer-social-link" aria-label="LinkedIn">
+          <span className="footer-follow-label">Follow us on :</span>
+          <a href="https://www.linkedin.com/company/sewing-circle-llc/" className="footer-social-link" aria-label="LinkedIn">
             <Linkedin size={20} />
           </a>
         </div>
