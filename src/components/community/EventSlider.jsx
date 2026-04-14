@@ -2,18 +2,18 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import Reveal from '../shared/Reveal';
 
 // Import local images
-import dec1 from '../../image/December/dec1.jpeg';
-import dec2 from '../../image/December/dec2.jpeg';
-import oct1 from '../../image/October/oct1.jpeg';
-import oct2 from '../../image/October/oct2.jpeg';
-import oct3 from '../../image/October/oct3.jpeg';
-import april1 from '../../image/April/april1.jpeg';
-import april2 from '../../image/April/april2.jpeg';
-import april3 from '../../image/April/april3.jpeg';
-import feb1 from '../../image/February/feb1.jpeg';
-import feb2 from '../../image/February/feb2.jpeg';
-import june1 from '../../image/June/june1.jpeg';
-import june2 from '../../image/June/june2.jpeg';
+import dec1 from '../../image/2025/December/dec1.jpg';
+import dec2 from '../../image/2025/December/dec2.jpg';
+import oct1 from '../../image/2025/October/oct1.png';
+import oct2 from '../../image/2025/October/oct2.png';
+import oct3 from '../../image/2025/October/oct3.png';
+import april1 from '../../image/2025/April/april1.jpg';
+import april2 from '../../image/2025/April/april2.jpg';
+import april3 from '../../image/2025/April/april3.jpg';
+import feb1 from '../../image/2025/February/feb1.jpg';
+import feb2 from '../../image/2025/February/feb2.jpg';
+import june1 from '../../image/2025/June/june1.jpg';
+import june2 from '../../image/2025/June/june2.jpg';
 
 /**
  * EventSlider Component
