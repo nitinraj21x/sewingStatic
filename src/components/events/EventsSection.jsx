@@ -17,6 +17,8 @@ import feb2 from '../../image/2025/February/feb2.jpg';
 import june1 from '../../image/2025/June/june1.jpg';
 import june2 from '../../image/2025/June/june2.jpg';
 import feb26 from '../../image/2026/Feb/feb26.jpg';
+import apr26 from '../../image/2026/Apr/apr26.jpeg'
+import apr226 from '../../image/2026/Apr/apr226.jpeg'
 
 const EventsSection = React.memo(() => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -29,16 +31,29 @@ const EventsSection = React.memo(() => {
   const upcomingEvents = [
     {
       id: 'upcoming-1',
-      name: "☕ Sewing Circle Coffee Meetup – Bringing IT Professionals Together ",
-      date: "April 25",
+      name: "🧵 Sewing Circle Meetup – June 27 | DFW ☕",
+      date: "June 27",
       time: "4 pm",
-      venue: "https://share.google/ZeydqxaTM6jRCXA0f",
-      description: "We’re excited to host our next Sewing Circle Coffee Meetup on April 25th in Frisco, TX.\n\nSewing Circle is a growing community of IT professionals built on the idea of coming together to support one another—through knowledge sharing, meaningful conversations, and genuine connections. \n\nThis meetup is an opportunity to:\n*Learn from each other’s experiences\n* Build a strong, supportive network\n* Open doors for others in the IT community \n* Enjoy an evening of authentic conversations "
+      venue: "https://maps.app.goo.gl/BkGi2Mw2NZw8tF927",
+      description: "Summer schedules are here — school breaks, vacations, busy calendars, and shifting routines.\n\nEven in the middle of it all, we’re making space to pause, reconnect, and come together for a few meaningful hours of conversation and community at our next Sewing Circle Meetup.\n\nJoin professionals from across the Dallas–Fort Worth area to exchange ideas, share experiences, build connections, and enjoy thoughtful conversations in good company.\n\nWhether you work in tech, recruiting, operations, product, engineering, leadership, or are simply looking to connect with professionals navigating similar journeys, you’re welcome to join us. \n\nBeen to Sewing Circle before? Bring a colleague or friend along. New to the community? We’d love to meet you.\n\nCome for the conversation, stay for the connections. ☕✨"
     }
   ];
 
   // Past Events data (ordered from latest to oldest)
   const pastEvents = [
+    {
+      id: 'past-7',
+      header: "April 2026",
+      theme: "Diffrerent Paths Converge Together",
+      teaser: "We had 13 professionals at the table, from diverse backgrounds — network engineering, cybersecurity, Salesforce, SaaS, OMS, cloud architecture, Business Operations and program/delivery leadership.",
+      fullDescription: "Last Saturday (April 25th), we hosted our second Sewing Circle meetup — and what an incredibly engaging evening it turned out to be. \n\n If anything, it felt like we ran short of time, with conversations that could have easily continued much longer. \n\nWe had 13 professionals at the table, from diverse backgrounds — network engineering, cybersecurity, Salesforce, SaaS, OMS, cloud architecture, Business Operations and program/delivery leadership. \n\nDifferent journeys, but a shared intent to connect, learn, and exchange openly. \n\nA few reflections that stood out: \n\n🔹 AI in Salesforce – Augmentation, not reduction \nAI is not immediately reducing headcount, but enhancing data capabilities and client value. \n\n🔹 From Excel to SaaS – Real transformation stories \nA SaaS solution for NBFCs replacing Excel-based tracking with structured, scalable systems — a reminder that innovation must be relevant, not complex. \n\n🔹 Cybersecurity & emerging AI agents \nDiscussion around a not-yet-public cybersecurity AI agent — innovation moving faster than awareness. \n\n🔹 AI adoption vs. readiness gap \nOrganizations are accelerating AI adoption, but people readiness and training are still catching up. \n\n🔹 The rise of human orchestration \nThe real differentiator will be how humans orchestrate AI — knowing what to use, when, and where it adds value. \n\n🔹 A growing talent paradox \nProfessionals who are both deeply technical and strong in client engagement are becoming harder to find. \n\n🔹 AI-native tools & hiring — an evolving question \nHiring may shift from roles to capabilities, but the full impact is still unfolding. \n\n🔹 The unanswered question — how do we measure AI? \nAI adoption is accelerating, but meaningful measurement still feels like a “wait and watch” space. \n\nAnd in between — conversations about travel, kids, and everyday life. \n\nA reminder that beyond all the change, people still seek genuine connection. \n\nMoments like these are a big reminder of why we do what we do. \n\nWhat stood out was the openness and willingness to learn from one another. \n\nIn a fast-moving world, spaces like these remind us that \n\nreal insight still comes from human conversations. \n\nIf conversations like these resonate with you, we’d love to have you join us in a future Sewing Circle meetup. \n\nLooking forward to creating many more such meaningful evenings together ✨ \n\nTeam – Sewing Circle 🧵✨",
+      location: "Rayhan Coffee House, Frisco",
+      duration: "2 hours",
+      participants: 13,
+      facilitator: "Asha",
+      coverImage: apr26,
+      gallery: [apr26, apr226]
+    },
     {
       id: 'past-6',
       header: "February 2026",
