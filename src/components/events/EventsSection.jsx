@@ -19,6 +19,8 @@ import june2 from '../../image/2025/June/june2.jpg';
 import feb26 from '../../image/2026/Feb/feb26.jpg';
 import apr26 from '../../image/2026/Apr/apr26.jpeg'
 import apr226 from '../../image/2026/Apr/apr226.jpeg'
+import jun26 from '../../image/2026/June/jun26.jpeg'
+import jun226 from '../../image/2026/June/jun226.jpeg'
 
 const EventsSection = React.memo(() => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -31,16 +33,29 @@ const EventsSection = React.memo(() => {
   const upcomingEvents = [
     {
       id: 'upcoming-1',
-      name: "🧵 Sewing Circle Meetup – June 27 | DFW ☕",
-      date: "June 27",
+      name: "🧵 Sewing Circle Meetup – August 29 ☕",
+      date: "August 29",
       time: "4 pm",
-      venue: "https://maps.app.goo.gl/BkGi2Mw2NZw8tF927",
-      description: "Summer schedules are here — school breaks, vacations, busy calendars, and shifting routines.\n\nEven in the middle of it all, we’re making space to pause, reconnect, and come together for a few meaningful hours of conversation and community at our next Sewing Circle Meetup.\n\nJoin professionals from across the Dallas–Fort Worth area to exchange ideas, share experiences, build connections, and enjoy thoughtful conversations in good company.\n\nWhether you work in tech, recruiting, operations, product, engineering, leadership, or are simply looking to connect with professionals navigating similar journeys, you’re welcome to join us. \n\nBeen to Sewing Circle before? Bring a colleague or friend along. New to the community? We’d love to meet you.\n\nCome for the conversation, stay for the connections. ☕✨"
+      venue: "https://maps.app.goo.gl/JUEWTyT4rsmZmLnx8",
+      description: "An evening of conversations, collaboration, and fresh perspectives bringing together professionals across engineering, product, AI, cloud, cybersecurity, consulting, and emerging technologies. \nBecause the best ideas rarely happen in isolation."
     }
   ];
 
   // Past Events data (ordered from latest to oldest)
   const pastEvents = [
+    {
+      id: 'past-8',
+      header: "June 2026",
+      theme: "Cross-industry conversations on AI, leadership, engineering, and the evolving future of work.",
+      teaser: "When telecom, healthcare, banking, manufacturing, and tech leaders sit at one table, tjun226he result is more than networking. It becomes a collision of perspectives on AI, leadership, engineering, and the human side of transformation.",
+      fullDescription: "The latest Sewing Circle meetup brought together professionals from diverse industries for candid conversations about technology, AI adoption, software engineering, manufacturing innovation, hiring, and leadership. Discussions explored how AI is reshaping development and industrial operations, the future of AI-driven SDLCs, evolving expectations from technology leaders, and why judgment and adaptability matter more than ever. Beyond work, conversations extended into mentoring, parenting, sports, and preparing the next generation for an AI-shaped future. The meetup reinforced Sewing Circle’s vision of creating a space where diverse perspectives spark meaningful learning, deeper connections, and shared growth.",
+      location: "Rayhan Coffee House, Frisco",
+      duration: "2 hours",
+      participants: 10,
+      facilitator: "Asha",
+      coverImage: jun26,
+      gallery: [jun26, jun226]
+    },
     {
       id: 'past-7',
       header: "April 2026",
