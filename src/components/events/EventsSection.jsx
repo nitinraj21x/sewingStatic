@@ -34,10 +34,10 @@ const EventsSection = React.memo(() => {
     {
       id: 'upcoming-1',
       name: "🧵 Sewing Circle Meetup – August 29 ☕",
-      date: "August 29",
-      time: "4 pm",
-      venue: "https://maps.app.goo.gl/JUEWTyT4rsmZmLnx8",
-      description: "An evening of conversations, collaboration, and fresh perspectives bringing together professionals across engineering, product, AI, cloud, cybersecurity, consulting, and emerging technologies. \nBecause the best ideas rarely happen in isolation."
+      date: "📅 Saturday, August 29",
+      time: "🕓 4:00–6:00 PM",
+      venue: "https://maps.app.goo.gl/AtT35UvVwLKaZvQAA",
+      description: "We’re bringing the Sewing Circle community to Austin this time, and I’d love for you to join us! It’ll be a relaxed evening to meet other professionals, exchange ideas, and have some meaningful conversations over coffee."
     }
   ];
 
