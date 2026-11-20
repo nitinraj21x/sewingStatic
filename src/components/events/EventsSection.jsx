@@ -21,6 +21,9 @@ import apr26 from '../../image/2026/Apr/apr26.jpeg'
 import apr226 from '../../image/2026/Apr/apr226.jpeg'
 import jun26 from '../../image/2026/June/jun26.jpeg'
 import jun226 from '../../image/2026/June/jun226.jpeg'
+import aug01 from '../../image/2026/Aug/aug01.jpg'
+import aug02 from '../../image/2026/Aug/aug02.jpg'
+import oct26 from '../../image/2026/Oct/Oct.jpeg'
 
 const EventsSection = React.memo(() => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -29,20 +32,37 @@ const EventsSection = React.memo(() => {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [selectedEventForRegistration, setSelectedEventForRegistration] = useState(null);
 
-  // Upcoming Events
-  const upcomingEvents = [
-    {
-      id: 'upcoming-1',
-      name: "🧵 Sewing Circle Meetup – August 29 ☕",
-      date: "📅 Saturday, August 29",
-      time: "🕓 4:00–6:00 PM",
-      venue: "https://maps.app.goo.gl/AtT35UvVwLKaZvQAA",
-      description: "We’re bringing the Sewing Circle community to Austin this time, and I’d love for you to join us! It’ll be a relaxed evening to meet other professionals, exchange ideas, and have some meaningful conversations over coffee."
-    }
-  ];
+  // No upcoming events are currently scheduled.
+  const upcomingEvents = [];
 
   // Past Events data (ordered from latest to oldest)
   const pastEvents = [
+    {
+      id: 'past-10',
+      header: "October 2026",
+      theme: "When Experienced Minds Come Together, Conversations Go Beyond Technology",
+      teaser: "Seasoned IT professionals debated how experience, business judgment, and adaptability can set leaders apart in an AI-driven world.",
+      fullDescription: "When experienced minds come together, conversations go beyond technology!\n\nYesterday’s Sewing Circle Dallas meetup was another reminder of why we started this community.\n\nWe had a wonderful group of seasoned IT professionals with extensive experience across project management, technology architecture, delivery leadership, and talent management. Many have spent over two decades navigating the evolving technology landscape.\n\nWhat began with introductions quickly turned into nearly two hours of engaging conversations, diverse perspectives, and interesting debates!\n\nOne key discussion centered on the changing H-1B landscape and its potential impact on the job market, housing, and broader economy. This led to perspectives on the expansion of Global Capability Centers (GCCs) in India and elsewhere, and whether demand for experienced architects and technology leaders could increasingly shift toward these markets.\n\nBut what particularly stayed with me was a question that sparked a healthy debate:\n\nFor professionals with 20–25 years of experience, what will truly differentiate them in an AI-driven world?\n\nIs it deep domain expertise accumulated over the years? Or the ability to quickly understand business challenges, translate vision into outcomes, anticipate risks, establish governance, and leverage emerging technologies to deliver measurable value?\n\nStrong perspectives emerged on both sides, making the discussion particularly valuable.\n\nAnother observation was the shift in how professionals are approaching AI. Compared with earlier this year, there seemed to be less apprehension about job displacement and greater emphasis on adapting, upskilling, and leveraging AI effectively.\n\nWe also discussed how enterprises are moving from broad AI experimentation toward more deliberate adoption, focusing on business value, optimization, and return on investment.\n\nConversations touched upon cybersecurity across cloud and AI environments, expanding banking operations in Charlotte, and the fascinating world of time-sensitive medical logistics involving the transportation of organs, tissues, and stem cells.\n\nAnd of course, conversations went beyond technology! We spoke about career choices for the next generation, changing housing markets, and how economic shifts influence our lives.\n\nWhat I personally enjoy most about these gatherings is that there is no formal agenda, no presentation, and no pressure to have all the answers.\n\nJust people sharing experiences, asking questions, challenging perspectives, and learning from one another.\n\nThe more we meet, the more I realize that Sewing Circle’s strength lies not in the number of people we bring together, but in the connections we build and our willingness to support one another.\n\nA heartfelt thank you to everyone who joined us and made the conversations so meaningful.\n\nLooking forward to more conversations, connections, and shared learning!",
+      location: "Feng Cha – The Colony",
+      date: "Saturday, October 10, 2026 · 4:00–6:00 PM",
+      duration: "2 hours",
+      facilitator: "Asha",
+      coverImage: oct26,
+      gallery: [oct26]
+    },
+    {
+      id: 'past-9',
+      header: "August 2026",
+      theme: "A Great Start for Sewing Circle in Austin",
+      teaser: "Five Austin professionals met for an open exchange on healthcare, contact centers, the job market, AI, and the value of human connection.",
+      fullDescription: "A Great Start for Sewing Circle in Austin!\n\nYesterday marked our first Sewing Circle meetup in the Austin area, and while we were a small group of five, the conversations and connections were anything but small.\n\nProfessionals from diverse backgrounds — healthcare, infrastructure, UX and contact center management, recruitment, resource management and deployment — came together for what turned into two hours of effortless conversation. What stood out most was how quickly everyone connected. It hardly felt like a group meeting for the first time!\n\nAs always, the conversation moved organically across industries, experiences and the changing job market.\n\nOne particularly insightful discussion was around contact center management — the platforms being used today, including Genesys and Google-based solutions, how these ecosystems work, and how the contact center landscape continues to evolve.\n\nWith healthcare experience around the table, we also had an interesting conversation about the modernization happening within state healthcare systems, including initiatives across states such as Texas, Oklahoma and New Jersey, and the opportunities this transformation could potentially create.\n\nThe current job market was another important topic. We exchanged perspectives on the dos and don’ts of job hunting, how AI is changing recruiting and candidate screening, and how professionals can better prepare and articulate their experience using the STAR approach during interviews.\n\nInterestingly, AI did not take center stage this time.\n\nEarlier this year, many of our conversations were dominated by questions about how much AI would replace human roles. Yesterday, I sensed a subtle shift in the room. The discussion was less about “Will AI replace us?” and more about “How will our roles evolve alongside AI?”\n\nThere was acknowledgement that some traditional responsibilities across project management, Scrum and business analysis may increasingly be automated or consolidated, while roles requiring broader ownership, judgment and strategic decision-making — such as enterprise program leadership and product management — may continue to remain important.\n\nAI may enable organizations to operate with leaner teams. But the sentiment around the table was that human judgment, experience, relationships and genuine connection still have an important place.\n\nNo big crowd. No formal agenda. Just five professionals meeting for the first time, exchanging experiences, learning from one another and genuinely looking for ways to help each other.\n\nThe encouraging feedback — and the willingness of those who attended to introduce more Austin professionals to the community — made our first Austin meetup feel like a wonderful beginning.\n\nLooking forward to growing the Sewing Circle community in Austin, one genuine connection at a time.",
+      location: "Austin, Texas",
+      duration: "2 hours",
+      participants: 5,
+      facilitator: "Asha",
+      coverImage: aug01,
+      gallery: [aug01, aug02]
+    },
     {
       id: 'past-8',
       header: "June 2026",
@@ -234,7 +254,7 @@ const EventsSection = React.memo(() => {
         </div>
         
         {/* Upcoming Events Subsection */}
-        <div className="events-subsection">
+        {upcomingEvents.length > 0 && <div className="events-subsection">
           <Reveal>
             <h3 className="events-subsection-title">Upcoming Events</h3>
           </Reveal>
@@ -284,7 +304,7 @@ const EventsSection = React.memo(() => {
               </Reveal>
             ))}
           </div>
-        </div>
+        </div>}
 
         {/* Past Events Subsection */}
         <div className="events-subsection">
@@ -307,10 +327,10 @@ const EventsSection = React.memo(() => {
                   <div className="past-event-overlay">
                     <h4 className="past-event-title">{event.header}</h4>
                     <div className="past-event-meta">
-                      <div className="past-event-meta-item">
+                      {event.participants && <div className="past-event-meta-item">
                         <Users size={16} />
                         <span>{event.participants} participants</span>
-                      </div>
+                      </div>}
                       <div className="past-event-meta-item">
                         <MapPin size={16} />
                         <span>{event.location}</span>
@@ -397,12 +417,16 @@ const EventsSection = React.memo(() => {
                       <h4>Duration</h4>
                       <p>{selectedEvent.duration}</p>
                     </div>
-                    <div className="modal-info-item">
+                    {selectedEvent.date && <div className="modal-info-item">
+                      <h4>Date &amp; Time</h4>
+                      <p>{selectedEvent.date}</p>
+                    </div>}
+                    {selectedEvent.participants && <div className="modal-info-item">
                       <h4>Participants</h4>
                       <p>{selectedEvent.participants} members</p>
-                    </div>
+                    </div>}
                     <div className="modal-info-item">
-                      <h4>Facilitator</h4>
+                      <h4>Organiser</h4>
                       <p>{selectedEvent.facilitator}</p>
                     </div>
                   </div>
